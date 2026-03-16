@@ -1,0 +1,782 @@
+{
+  "meta": {
+    "source_url": "https://rentfy.app/",
+    "extracted_at": "2026-02-24T18:06:24.711Z",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
+    "viewport": {
+      "w": 1440,
+      "h": 900
+    },
+    "title": "RentFy App"
+  },
+  "structure": {
+    "header": true,
+    "nav": true,
+    "sections_count": 18,
+    "footer": true,
+    "main": true
+  },
+  "assets": {
+    "css_files": [
+      "https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap",
+      "https://rentfy.app/assets/index-CF99dpAB.css"
+    ],
+    "js_files": [
+      "https://rentfy.app/assets/index-Dn-2KF_7.js",
+      "https://rentfy.app/~flock.js"
+    ],
+    "images": [
+      "https://rentfy.app/assets/rentfy-logo-B_kuJVjU.png",
+      "https://rentfy.app/assets/dashboard-real-B6fthhaS.png",
+      "https://rentfy.app/assets/importar-card-PFXOXB9L.png",
+      "https://rentfy.app/assets/sincronizar-card-C13CFOpI.png",
+      "https://rentfy.app/assets/analisar-card-DL8NDibJ.png",
+      "https://rentfy.app/assets/reports-showcase-CHObUOA7.png",
+      "https://rentfy.app/assets/manutencoes-inteligentes-badge-C05N1ihP.png",
+      "https://rentfy.app/assets/market-comparison-y2VE7x-F.png",
+      "https://rentfy.app/assets/dashboard-showcase-2-Da50cxe8.png",
+      "https://rentfy.app/assets/dashboard-showcase-1-DTCk_i-x.png",
+      "https://rentfy.app/assets/dashboard-tablet-mockup-new-7uamLRT0.png",
+      "https://rentfy.app/assets/testimonial-businessman-D2m4yvTH.jpg",
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
+      "https://rentfy.app/assets/rentfy-logo-B_kuJVjU.png"
+    ],
+    "icons": [
+      "https://rentfy.app/pwa-192x192.png",
+      "https://rentfy.app/pwa-192x192.png",
+      "https://rentfy.app/pwa-192x192.png",
+      "https://rentfy.app/pwa-192x192.png",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/HTOE9fz8J9gQzvLWnglyEyex8SK2/uploads/1761799611195-Gemini_Generated_Image_dathxfdathxfdath.png"
+    ],
+    "fonts_css": []
+  },
+  "design_tokens": {
+    "colors": {
+      "css_variables_raw": {
+        "--border": "220 13% 91%",
+        "--tw-ring-offset-shadow": "0 0 #0000",
+        "--tw-backdrop-sepia": "",
+        "--sidebar-background": "0 0% 98%",
+        "--tw-ring-shadow": "0 0 #0000",
+        "--sidebar-primary-foreground": "0 0% 98%",
+        "--primary-dark": "220 91% 35%",
+        "--secondary-light": "210 91% 55%",
+        "--card": "0 0% 100%",
+        "--tw-sepia": "",
+        "--accent": "215 85% 45%",
+        "--tw-ordinal": "",
+        "--shadow-md": "0 4px 6px -1px hsl(220 91% 45% / .1)",
+        "--tw-backdrop-saturate": "",
+        "--tw-contain-style": "",
+        "--primary-foreground": "0 0% 98%",
+        "--transition-normal": "all .3s cubic-bezier(.4, 0, .2, 1)",
+        "--success": "142 76% 36%",
+        "--tw-ring-inset": "",
+        "--card-foreground": "215 25% 27%",
+        "--tw-backdrop-invert": "",
+        "--gradient-primary": "linear-gradient(135deg, hsl(220 91% 45%), hsl(220 91% 55%))",
+        "--tw-numeric-spacing": "",
+        "--secondary-foreground": "0 0% 98%",
+        "--sidebar-accent-foreground": "240 5.9% 10%",
+        "--tw-border-spacing-x": "0",
+        "--muted": "220 14% 96%",
+        "--background": "0 0% 100%",
+        "--primary-light": "220 91% 55%",
+        "--gradient-accent": "linear-gradient(135deg, hsl(215 85% 45%), hsl(215 85% 55%))",
+        "--tw-brightness": "",
+        "--tw-backdrop-grayscale": "",
+        "--tw-hue-rotate": "",
+        "--tw-scale-y": "1",
+        "--gradient-hero": "linear-gradient(135deg, hsl(220 91% 45%), hsl(210 91% 45%))",
+        "--accent-foreground": "0 0% 98%",
+        "--tw-pan-y": "",
+        "--tw-backdrop-contrast": "",
+        "--tw-drop-shadow": "",
+        "--tw-ring-color": "rgb(59 130 246 / .5)",
+        "--tw-backdrop-brightness": "",
+        "--tw-pan-x": "",
+        "--tw-translate-y": "0",
+        "--shadow-xl": "0 20px 25px -5px hsl(220 91% 45% / .15)",
+        "--warning": "45 93% 47%",
+        "--popover": "0 0% 100%",
+        "--ring": "152 73% 23%",
+        "--tw-rotate": "0",
+        "--tw-ring-offset-color": "#fff",
+        "--tw-contain-size": "",
+        "--warning-foreground": "0 0% 98%",
+        "--tw-contrast": "",
+        "--accent-light": "215 85% 55%",
+        "--sidebar-border": "220 13% 91%",
+        "--sidebar-foreground": "240 5.3% 26.1%",
+        "--muted-foreground": "220 9% 46%",
+        "--tw-skew-x": "0",
+        "--sidebar-accent": "240 4.8% 95.9%",
+        "--shadow-sm": "0 1px 2px 0 hsl(220 91% 45% / .05)",
+        "--radius": ".75rem",
+        "--shadow-lg": "0 10px 15px -3px hsl(220 91% 45% / .1)",
+        "--tw-backdrop-blur": "",
+        "--popover-foreground": "215 25% 27%",
+        "--tw-shadow": "0 0 #0000",
+        "--tw-translate-x": "0",
+        "--tw-ring-offset-width": "0px",
+        "--tw-gradient-via-position": "",
+        "--input": "220 13% 91%",
+        "--tw-saturate": "",
+        "--tw-scroll-snap-strictness": "proximity",
+        "--tw-grayscale": "",
+        "--destructive": "0 84% 60%",
+        "--transition-fast": "all .15s cubic-bezier(.4, 0, .2, 1)",
+        "--tw-scale-x": "1",
+        "--tw-backdrop-hue-rotate": "",
+        "--tw-shadow-colored": "0 0 #0000",
+        "--tw-gradient-to-position": "",
+        "--tw-border-spacing-y": "0",
+        "--tw-numeric-fraction": "",
+        "--destructive-foreground": "0 0% 98%",
+        "--gradient-secondary": "linear-gradient(135deg, hsl(210 91% 45%), hsl(210 91% 55%))",
+        "--tw-skew-y": "0",
+        "--primary": "220 91% 45%",
+        "--tw-slashed-zero": "",
+        "--tw-blur": "",
+        "--tw-invert": "",
+        "--foreground": "215 25% 27%",
+        "--tw-backdrop-opacity": "",
+        "--sidebar-primary": "240 5.9% 10%",
+        "--transition-slow": "all .5s cubic-bezier(.4, 0, .2, 1)",
+        "--secondary": "210 91% 45%",
+        "--tw-gradient-from-position": "",
+        "--tw-numeric-figure": "",
+        "--sidebar-ring": "217.2 91.2% 59.8%",
+        "--tw-pinch-zoom": "",
+        "--tw-contain-paint": "",
+        "--tw-contain-layout": "",
+        "--success-foreground": "0 0% 98%"
+      },
+      "semantic_hsl": {
+        "background": "hsl(0 0% 100%)",
+        "foreground": "hsl(215 25% 27%)",
+        "primary": "hsl(220 91% 45%)",
+        "primary_foreground": "hsl(0 0% 98%)",
+        "secondary": "hsl(210 91% 45%)",
+        "secondary_foreground": "hsl(0 0% 98%)",
+        "accent": "hsl(215 85% 45%)",
+        "muted": "hsl(220 14% 96%)",
+        "border": "hsl(220 13% 91%)",
+        "input": "hsl(220 13% 91%)",
+        "destructive": "hsl(0 84% 60%)",
+        "success": "hsl(142 76% 36%)",
+        "warning": "hsl(45 93% 47%)",
+        "ring": "hsl(152 73% 23%)"
+      },
+      "gradients": {
+        "gradient_primary": "linear-gradient(135deg, hsl(220 91% 45%), hsl(220 91% 55%))",
+        "gradient_secondary": "linear-gradient(135deg, hsl(210 91% 45%), hsl(210 91% 55%))",
+        "gradient_accent": "linear-gradient(135deg, hsl(215 85% 45%), hsl(215 85% 55%))",
+        "gradient_hero": "linear-gradient(135deg, hsl(220 91% 45%), hsl(210 91% 45%))"
+      },
+      "top_computed_text_colors": [
+        "rgb(52, 66, 86)",
+        "rgb(255, 255, 255)",
+        "rgb(0, 0, 0)",
+        "rgba(255, 255, 255, 0.7)",
+        "rgb(107, 114, 128)",
+        "rgba(255, 255, 255, 0.9)",
+        "rgb(229, 231, 235)",
+        "rgba(255, 255, 255, 0.6)",
+        "rgb(250, 250, 250)",
+        "rgb(249, 250, 251)",
+        "rgb(209, 213, 219)",
+        "rgb(10, 80, 219)",
+        "rgba(255, 255, 255, 0.8)",
+        "rgb(243, 244, 246)",
+        "rgb(161, 161, 170)",
+        "rgb(37, 99, 235)",
+        "rgba(255, 255, 255, 0.75)",
+        "rgb(156, 163, 175)",
+        "rgb(212, 212, 216)",
+        "rgba(52, 66, 86, 0.8)",
+        "rgba(255, 255, 255, 0.95)"
+      ],
+      "top_computed_background_colors": [
+        "rgb(255, 255, 255)",
+        "rgba(255, 255, 255, 0.4)",
+        "rgba(0, 100, 255, 0.7)",
+        "rgba(10, 80, 219, 0.1)",
+        "rgba(0, 0, 0, 0.3)",
+        "rgba(255, 255, 255, 0.05)",
+        "rgba(255, 255, 255, 0.1)",
+        "rgba(59, 130, 246, 0.1)",
+        "rgba(255, 255, 255, 0.12)",
+        "rgba(255, 255, 255, 0.95)",
+        "rgb(10, 115, 219)",
+        "rgb(10, 80, 219)",
+        "rgba(30, 58, 138, 0.05)",
+        "rgba(255, 255, 255, 0.2)"
+      ],
+      "shadows": {
+        "shadow_sm": "0 1px 2px 0 hsl(220 91% 45% / .05)",
+        "shadow_md": "0 4px 6px -1px hsl(220 91% 45% / .1)",
+        "shadow_lg": "0 10px 15px -3px hsl(220 91% 45% / .1)",
+        "shadow_xl": "0 20px 25px -5px hsl(220 91% 45% / .15)",
+        "top_computed": [
+          "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 25px 50px -12px",
+          "rgba(0, 100, 255, 0.05) 0px 0px 10px 0px",
+          "rgba(0, 100, 255, 0.5) 0px 0px 8px 0px",
+          "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(10, 80, 219, 0.15) 0px 20px 25px -5px",
+          "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(10, 80, 219, 0.1) 0px 10px 15px -3px",
+          "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.4) 0px 0px 80px 0px",
+          "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(10, 80, 219, 0.1) 0px 4px 6px -1px",
+          "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(10, 80, 219, 0.05) 0px 1px 2px 0px"
+        ]
+      }
+    },
+    "typography": {
+      "primary_font": "Inter",
+      "imported_fonts": [
+        "https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap",
+        "https://rentfy.app/assets/index-CF99dpAB.css"
+      ],
+      "font_families_ranked": [
+        "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "Inter, sans-serif"
+      ],
+      "font_sizes_ranked": [
+        "16px",
+        "14px",
+        "18px",
+        "48px",
+        "12px",
+        "72px",
+        "20px",
+        "30px",
+        "36px",
+        "24px",
+        "60px",
+        "10px"
+      ],
+      "font_weights_ranked": [
+        "400",
+        "500",
+        "200",
+        "600",
+        "700",
+        "300"
+      ],
+      "line_heights_ranked": [
+        "24px",
+        "20px",
+        "28px",
+        "48px",
+        "16px",
+        "72px",
+        "36px",
+        "40px",
+        "32px",
+        "60px",
+        "15px",
+        "21px"
+      ],
+      "letter_spacings_ranked": [
+        "normal",
+        "-0.3px",
+        "-3.6px",
+        "-2.4px",
+        "-0.35px",
+        "-1.2px",
+        "-0.45px",
+        "0.8px",
+        "-1.8px",
+        "-0.14px",
+        "-1.5px"
+      ]
+    },
+    "layout": {
+      "sections_count": 18,
+      "container_in_use": true,
+      "radius_scale": [
+        "9999px",
+        "16px",
+        "10px",
+        "50%",
+        "12px",
+        "8px",
+        "24px"
+      ],
+      "borders_ranked": [
+        "0px solid rgb(229, 231, 235)",
+        "0px 0px 1px solid rgba(255, 255, 255, 0.2)",
+        "4px solid rgb(229, 231, 235)",
+        "1px solid rgb(229, 231, 235)",
+        "1px solid rgba(0, 100, 255, 0.12)",
+        "1px solid rgba(255, 255, 255, 0.1)",
+        "4px solid rgba(255, 255, 255, 0.2)",
+        "1px solid rgb(63, 63, 70)",
+        "1px solid rgba(10, 80, 219, 0.1)",
+        "2px solid rgb(10, 80, 219)",
+        "1px solid rgba(255, 255, 255, 0.3)",
+        "1px 0px 0px solid rgba(255, 255, 255, 0.1)",
+        "1px 0px 0px solid rgb(229, 231, 235)"
+      ],
+      "spacing_patterns_ranked": [
+        "0px|0px|0px|0px|0px|0px|0px|0px",
+        "12px|0px|0px|0px|0px|0px|0px|0px",
+        "0px|0px|24px|0px|0px|0px|0px|0px",
+        "0px|0px|0px|0px|16px|0px|16px|0px",
+        "0px|20px|0px|20px|0px|16px|0px|16px",
+        "0px|0px|0px|0px|0px|16px|0px|16px",
+        "0px|0px|0px|0px|0px|8px|0px|0px",
+        "0px|0px|0px|0px|80px|0px|80px|0px",
+        "0px|0px|16px|0px|0px|0px|0px|0px",
+        "0px|0px|64px|0px|0px|16px|0px|16px",
+        "0px|0px|0px|0px|0px|32px|0px|32px",
+        "0px|0px|0px|0px|128px|0px|128px|0px",
+        "0px|284px|0px|284px|0px|0px|0px|0px",
+        "0px|0px|0px|0px|0px|12px|0px|12px",
+        "32px|0px|0px|0px|0px|16px|0px|16px",
+        "0px|108px|0px|108px|0px|0px|0px|0px",
+        "0px|0px|64px|0px|0px|0px|0px|0px",
+        "0px|236px|0px|236px|0px|0px|0px|0px",
+        "0px|0px|16px|0px|6px|16px|6px|16px",
+        "0px|0px|0px|0px|20px|32px|20px|32px",
+        "0px|0px|32px|0px|0px|0px|0px|0px",
+        "0px|0px|8px|0px|0px|0px|0px|0px",
+        "0px|0px|0px|0px|16px|16px|16px|16px",
+        "0px|170px|0px|170px|0px|16px|0px|16px",
+        "0px|0px|0px|150px|0px|0px|0px|0px",
+        "0px|0px|0px|0px|12px|24px|12px|24px",
+        "0px|150px|0px|0px|0px|0px|0px|0px",
+        "0px|0px|0px|0px|8px|8px|8px|8px",
+        "0px|0px|0px|0px|128px|64px|128px|64px",
+        "0px|0px|0px|0px|6px|12px|6px|12px"
+      ]
+    },
+    "motion": {
+      "transition_fast": "all .15s cubic-bezier(.4, 0, .2, 1)",
+      "transition_normal": "all .3s cubic-bezier(.4, 0, .2, 1)",
+      "transition_slow": "all .5s cubic-bezier(.4, 0, .2, 1)",
+      "transition_properties_ranked": [
+        "all",
+        "color, background-color, border-color, text-decoration-color, fill, stroke",
+        "transform",
+        "margin",
+        "all, opacity",
+        "opacity"
+      ],
+      "durations_ranked": [
+        "0s",
+        "0.15s",
+        "0.2s",
+        "0.5s",
+        "0.3s",
+        "1s",
+        "0.6s",
+        "1.2s, 1.5s"
+      ],
+      "easings_ranked": [
+        "ease",
+        "cubic-bezier(0.4, 0, 0.2, 1)",
+        "cubic-bezier(0, 0, 0.2, 1)",
+        "cubic-bezier(0.4, 0, 0.2, 1), ease-out",
+        "cubic-bezier(0.16, 1, 0.3, 1)",
+        "ease-in-out"
+      ],
+      "keyframes_ranked": [
+        "accordion-up",
+        "gradient",
+        "spin",
+        "shinery",
+        "pulse"
+      ]
+    }
+  },
+  "component_samples": {
+    "nav": [
+      {
+        "type": "nav",
+        "tag": "nav",
+        "class": "hidden md:block relative z-10",
+        "text": "RecursosBenefíciosPreçosFAQ🇧🇷PT",
+        "styles": {
+          "color": "rgb(52, 66, 86)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "padding": [
+            "0px",
+            "0px",
+            "0px",
+            "0px"
+          ],
+          "transition": {
+            "property": "all",
+            "duration": "0s",
+            "timing": "ease"
+          }
+        }
+      }
+    ],
+    "button": [
+      {
+        "type": "button",
+        "tag": "button",
+        "class": "inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 d",
+        "text": "🇧🇷PT",
+        "styles": {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "10px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "padding": [
+            "0px",
+            "12px",
+            "0px",
+            "12px"
+          ],
+          "transition": {
+            "property": "color, background-color, border-color, text-decoration-color, fill, stroke",
+            "duration": "0.15s",
+            "timing": "cubic-bezier(0.4, 0, 0.2, 1)"
+          }
+        }
+      },
+      {
+        "type": "button",
+        "tag": "button",
+        "class": "inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 d",
+        "text": "🇧🇷PT",
+        "styles": {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "10px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "padding": [
+            "0px",
+            "12px",
+            "0px",
+            "12px"
+          ],
+          "transition": {
+            "property": "color, background-color, border-color, text-decoration-color, fill, stroke",
+            "duration": "0.15s",
+            "timing": "cubic-bezier(0.4, 0, 0.2, 1)"
+          }
+        }
+      },
+      {
+        "type": "button",
+        "tag": "button",
+        "class": "p-2 text-white hover:bg-white/10 rounded-lg transition-colors",
+        "text": null,
+        "styles": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "12px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "padding": [
+            "8px",
+            "8px",
+            "8px",
+            "8px"
+          ],
+          "transition": {
+            "property": "color, background-color, border-color, text-decoration-color, fill, stroke",
+            "duration": "0.15s",
+            "timing": "cubic-bezier(0.4, 0, 0.2, 1)"
+          }
+        }
+      },
+      {
+        "type": "button",
+        "tag": "a",
+        "class": "gradient-animated-btn",
+        "text": "Comece Grátis",
+        "styles": {
+          "color": "rgb(52, 66, 86)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "16px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "padding": [
+            "0px",
+            "0px",
+            "0px",
+            "0px"
+          ],
+          "transition": {
+            "property": "all",
+            "duration": "0s",
+            "timing": "ease"
+          }
+        }
+      },
+      {
+        "type": "button",
+        "tag": "span",
+        "class": "gradient-animated-btn-inner",
+        "text": "Comece Grátis",
+        "styles": {
+          "color": "rgb(52, 66, 86)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "16px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "padding": [
+            "0px",
+            "32px",
+            "0px",
+            "32px"
+          ],
+          "transition": {
+            "property": "all",
+            "duration": "0.5s",
+            "timing": "ease"
+          }
+        }
+      },
+      {
+        "type": "button",
+        "tag": "span",
+        "class": "gradient-animated-btn-text",
+        "text": "Comece Grátis",
+        "styles": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "padding": [
+            "0px",
+            "0px",
+            "0px",
+            "0px"
+          ],
+          "transition": {
+            "property": "all",
+            "duration": "1s",
+            "timing": "ease"
+          }
+        }
+      },
+      {
+        "type": "button",
+        "tag": "button",
+        "class": "inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-",
+        "text": "Alguma dúvida? Entre em contato",
+        "styles": {
+          "color": "rgb(52, 66, 86)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(229, 231, 235)",
+          "borderRadius": "10px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "padding": [
+            "8px",
+            "16px",
+            "8px",
+            "16px"
+          ],
+          "transition": {
+            "property": "color, background-color, border-color, text-decoration-color, fill, stroke",
+            "duration": "0.15s",
+            "timing": "cubic-bezier(0.4, 0, 0.2, 1)"
+          }
+        }
+      },
+      {
+        "type": "button",
+        "tag": "button",
+        "class": "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 text-white hover:text-white/90 text-sm sm:text-base text-left",
+        "text": "Como funciona a integração com Turo?",
+        "styles": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "500",
+          "padding": [
+            "16px",
+            "0px",
+            "16px",
+            "0px"
+          ],
+          "transition": {
+            "property": "all",
+            "duration": "0.15s",
+            "timing": "cubic-bezier(0.4, 0, 0.2, 1)"
+          }
+        }
+      }
+    ],
+    "card": [
+      {
+        "type": "card",
+        "tag": "div",
+        "class": "text-card-foreground shadow-sm relative w-full max-w-4xl mx-auto overflow-hidden rounded-xl sm:rounded-2xl border-0 bg-transparent p-0",
+        "text": null,
+        "styles": {
+          "color": "rgb(52, 66, 86)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "16px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(10, 80, 219, 0.05) 0px 1px 2px 0px",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "padding": [
+            "0px",
+            "0px",
+            "0px",
+            "0px"
+          ],
+          "transition": {
+            "property": "all",
+            "duration": "0s",
+            "timing": "ease"
+          }
+        }
+      },
+      {
+        "type": "card",
+        "tag": "div",
+        "class": "space-y-2 sm:space-y-3 p-3 sm:p-4 md:p-0 bg-card/50 sm:bg-transparent rounded-lg sm:rounded-none",
+        "text": "Painel ExclusivoCada co-host tem dashboard próprio com apenas os dados dos seus veículos. Acesso seguro e limitado.",
+        "styles": {
+          "color": "rgb(52, 66, 86)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "padding": [
+            "0px",
+            "0px",
+            "0px",
+            "0px"
+          ],
+          "transition": {
+            "property": "all",
+            "duration": "0s",
+            "timing": "ease"
+          }
+        }
+      },
+      {
+        "type": "card",
+        "tag": "div",
+        "class": "space-y-2 sm:space-y-3 p-3 sm:p-4 md:p-0 bg-card/50 sm:bg-transparent rounded-lg sm:rounded-none",
+        "text": "Comissões AutomáticasConfigure modelos de comissão: percentual, valor fixo ou misto. Cálculo automático e transparente.",
+        "styles": {
+          "color": "rgb(52, 66, 86)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "padding": [
+            "0px",
+            "0px",
+            "0px",
+            "0px"
+          ],
+          "transition": {
+            "property": "all",
+            "duration": "0s",
+            "timing": "ease"
+          }
+        }
+      },
+      {
+        "type": "card",
+        "tag": "div",
+        "class": "space-y-2 sm:space-y-3 p-3 sm:p-4 md:p-0 bg-card/50 sm:bg-transparent rounded-lg sm:rounded-none",
+        "text": "Aprovação de ManutençãoCo-hosts aprovam despesas dos seus próprios veículos. Workflow completo e transparente.",
+        "styles": {
+          "color": "rgb(52, 66, 86)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "padding": [
+            "0px",
+            "0px",
+            "0px",
+            "0px"
+          ],
+          "transition": {
+            "property": "all",
+            "duration": "0s",
+            "timing": "ease"
+          }
+        }
+      },
+      {
+        "type": "card",
+        "tag": "div",
+        "class": "space-y-2 sm:space-y-3 p-3 sm:p-4 md:p-0 bg-card/50 sm:bg-transparent rounded-lg sm:rounded-none",
+        "text": "Relatórios DetalhadosReceita, custos e lucro por veículo. Relatórios exportáveis por período e co-host.",
+        "styles": {
+          "color": "rgb(52, 66, 86)",
+          "backgroundColor": null,
+          "border": "0px solid rgb(229, 231, 235)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "padding": [
+            "0px",
+            "0px",
+            "0px",
+            "0px"
+          ],
+          "transition": {
+            "property": "all",
+            "duration": "0s",
+            "timing": "ease"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,121 @@
+/* CSS Variables from rentfy.normalized-design-tokens.json */
+:root {
+    /* Colors - Blue-dominant palette */
+    --background: 220 91% 45%;
+    --foreground: 0 0% 100%;
+    --primary: 220 91% 45%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 91% 45%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 215 85% 45%;
+    --accent-foreground: 0 0% 98%;
+    --muted: 0 0% 100% / 0.08;
+    --muted-foreground: 0 0% 100% / 0.7;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 98%;
+    --border: 0 0% 100% / 0.15;
+    --input: 0 0% 100% / 0.15;
+    --ring: 0 0% 100% / 0.4;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 91% 45%), hsl(220 91% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 91% 45%), hsl(210 91% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(215 85% 45%), hsl(215 85% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 91% 45%), hsl(210 91% 45%));
+
+    /* Typography */
+    --font-primary: "Urbanist", sans-serif;
+
+    /* Font Sizes */
+    --fs-10: 10px;
+    --fs-12: 12px;
+    --fs-14: 14px;
+    --fs-16: 16px;
+    --fs-18: 18px;
+    --fs-20: 20px;
+    --fs-24: 24px;
+    --fs-30: 30px;
+    --fs-36: 36px;
+    --fs-48: 48px;
+    --fs-60: 60px;
+    --fs-72: 72px;
+
+    /* Font Weights */
+    --fw-200: 200;
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+
+    /* Line Heights */
+    --lh-20: 20px;
+    --lh-24: 24px;
+    --lh-28: 28px;
+    --lh-32: 32px;
+    --lh-36: 36px;
+    --lh-40: 40px;
+    --lh-48: 48px;
+    --lh-60: 60px;
+    --lh-72: 72px;
+
+    /* Motion - Transitions */
+    --transition-fast: all .4s var(--ease-out-premium);
+    --transition-normal: all .8s var(--ease-out-premium);
+    --transition-slow: all 1.2s var(--ease-out-premium);
+
+    /* Easings */
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out-premium: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Layout */
+    --radius-sm: 8px;
+    --radius-md: 10px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 91% 45% / .05);
+    --shadow-md: 0 4px 6px -1px hsl(220 91% 45% / .1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 91% 45% / .1);
+    --shadow-xl: 0 20px 25px -5px hsl(220 91% 45% / .15);
+}
+
+/* Keyframes from JSON */
+@keyframes accordion-up {
+    from {
+        height: var(--radix-accordion-content-height);
+    }
+
+    to {
+        height: 0;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}

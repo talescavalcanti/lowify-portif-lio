@@ -1,0 +1,166 @@
+/* =============================================
+ * MERGING PILL NAVBAR — Lowify
+ * Logo & CTA start at the far edges of the page.
+ * On scroll, they MOVE toward the compact center pill
+ * and the glass background expands to unify everything.
+ * ============================================= */
+
+.navbar-outer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 40px;
+    pointer-events: none;
+}
+
+/* ── Main wrapper — starts full width, shrinks on scroll ── */
+.navbar-pill-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1160px;
+    /* starts wide — logo at far left, CTA at far right */
+    margin: 0 auto;
+    padding: 10px 20px;
+    position: relative;
+    pointer-events: all;
+    will-change: max-width;
+    /* No background — the glass element handles it */
+}
+
+/* ── Glass background — starts compact on the links, expands ── */
+.navbar-glass {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    /* JS sets exact width on mount */
+    border-radius: 999px;
+
+    /* Blue glass styling */
+    background: hsl(220 91% 45% / 0.90);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow:
+        0 8px 32px hsl(220 91% 45% / 0.30),
+        0 2px 8px hsl(220 91% 45% / 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+
+    z-index: 0;
+    pointer-events: none;
+    will-change: width;
+}
+
+/* Refraction highlight on the glass */
+.navbar-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.9) 50%,
+            transparent);
+    pointer-events: none;
+}
+
+/* ── Logo — visible at far left edge ── */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.navbar-logo img {
+    height: 26px;
+    filter: brightness(0) invert(1);
+    display: block;
+}
+
+/* ── Links — centered, above the glass ── */
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-shrink: 0;
+    z-index: 1;
+    padding: 0;
+}
+
+.navbar-links a {
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    font-size: var(--fs-14);
+    font-weight: var(--fw-500);
+    white-space: nowrap;
+    transition: color 0.18s ease;
+}
+
+.navbar-links a:hover {
+    color: #ffffff;
+}
+
+/* ── CTA — visible at far right edge ── */
+.navbar-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    background: #ffffff;
+    color: hsl(var(--primary));
+    font-size: var(--fs-14);
+    font-family: var(--font-primary);
+    font-weight: var(--fw-600);
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    z-index: 1;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s ease;
+}
+
+.navbar-cta:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .navbar-outer {
+        padding: 12px 16px;
+    }
+
+    .navbar-links {
+        gap: 14px;
+    }
+
+    .navbar-links a:nth-child(3),
+    .navbar-links a:nth-child(4) {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .navbar-logo,
+    .navbar-cta,
+    .navbar-glass,
+    .navbar-links {
+        will-change: auto;
+        transition: none !important;
+    }
+}
