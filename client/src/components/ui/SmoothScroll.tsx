@@ -10,14 +10,13 @@ export const SmoothScroll = ({ children }: SmoothScrollProps) => {
     <ReactLenis
       root
       options={{
+        lerp: 0.1,
         duration: 1.2,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: 'vertical',
         gestureOrientation: 'vertical',
         smoothWheel: true,
         wheelMultiplier: 1,
-        smoothTouch: false,
-        touchMultiplier: 2,
         infinite: false,
       }}
     >
