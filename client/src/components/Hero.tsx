@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
+import { CartoonButton } from './ui/cartoon-button';
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import './Hero.css';
 
@@ -41,26 +42,71 @@ const Hero: React.FC = () => {
                     </motion.p>
 
                     {/* Buttons — last to land */}
-                    <motion.div
-                        className="hero-actions"
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ type: "spring", stiffness: 70, damping: 25, delay: 0.8 }}
-                    >
-                        <a href="#trial" className="btn-hero-primary">
-                            <span>Comece Agora</span>
-                        </a>
-                        <a href="#demo" className="btn-hero-secondary">Ver Demonstração</a>
-                    </motion.div>
+                    <div className="hero-actions flex-wrap gap-4 py-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 260,
+                                damping: 20,
+                                delay: 0.9
+                            }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <CartoonButton
+                                label="Quero meu acesso"
+                                href="#trial"
+                                color="bg-[#283eb9]"
+                                hasHighlight={false}
+                                className="!h-16 !px-8 !text-xl !font-black !w-full sm:!w-fit"
+                                containerClassName="px-1 pb-2"
+                            />
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 260,
+                                damping: 20,
+                                delay: 1.1
+                            }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <CartoonButton
+                                label="Ver Demonstração"
+                                href="#demo"
+                                color="bg-[#ffffff]"
+                                hasHighlight={false}
+                                className="!text-black !px-8 !h-16 !text-xl"
+                                containerClassName="px-1 pb-2"
+                            />
+                        </motion.div>
+                    </div>
                 </div>
 
                 <ContainerScroll titleComponent={<></>}>
-                    <img
-                        src="/images/imagem hero.webp"
-                        alt="Lowify Dashboard"
-                        className="hero-image rounded-2xl"
-                        draggable={false}
-                    />
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 50,
+                            damping: 20,
+                            delay: 0.8
+                        }}
+                    >
+                        <img
+                            src="/images/imagem hero.webp"
+                            alt="Lowify Dashboard"
+                            className="hero-image rounded-2xl"
+                            draggable={false}
+                        />
+                    </motion.div>
                 </ContainerScroll>
             </div>
 

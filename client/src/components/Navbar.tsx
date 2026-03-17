@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { CartoonButton } from './ui/cartoon-button';
 import './Navbar.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -100,9 +101,14 @@ const Navbar: React.FC = () => {
                     <a href="#faq">FAQ</a>
                 </nav>
 
-                <a href="#trial" className="navbar-cta">
-                    Comece Agora
-                </a>
+                <CartoonButton
+                    label="Começar Grátis"
+                    href="#trial"
+                    color="bg-[#ffffff]"
+                    hasHighlight={false}
+                    className="!h-12 !px-6 !text-black !border-2 !text-xl"
+                    containerClassName="navbar-cta"
+                />
             </div>
         </div>
     );
