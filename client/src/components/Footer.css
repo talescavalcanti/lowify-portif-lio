@@ -1,7 +1,7 @@
 .footer {
     padding: 80px 0 40px;
     background: transparent;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-grid {
@@ -14,10 +14,11 @@
 .footer-logo {
     height: 32px;
     margin-bottom: 24px;
-    background-color: #000000;
+    background-color: hsl(231 64% 15%);
     padding: 8px 14px;
     border-radius: 8px;
     box-sizing: content-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-brand p {
@@ -57,7 +58,7 @@
 
 .footer-bottom {
     padding-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
 }
 
@@ -84,3 +85,22 @@
         margin: 0 auto;
     }
 }
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 60px 0 32px;
+    }
+
+    .footer-logo {
+        display: block;
+        margin: 0 auto 24px;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-bottom {
+        padding-top: 28px;
+    }
+}

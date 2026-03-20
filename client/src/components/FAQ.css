@@ -122,3 +122,22 @@
         padding: 0 0 24px 0;
     }
 }
+
+@media (max-width: 480px) {
+    .faq-section {
+        padding: 60px 0;
+    }
+
+    .faq-header {
+        margin-bottom: 40px;
+    }
+
+    .faq-question {
+        font-size: var(--fs-14);
+        padding: 20px 0;
+    }
+
+    .faq-answer-content p {
+        font-size: var(--fs-14);
+    }
+}

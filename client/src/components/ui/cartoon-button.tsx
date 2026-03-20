@@ -29,7 +29,7 @@ export function CartoonButton({
     onClick?.();
   };
 
-  const buttonClasses = `relative h-14 px-10 text-xl rounded-full font-black text-white border-4 border-black transition-all duration-150 group flex items-center justify-center
+  const buttonClasses = `relative h-14 px-10 text-xl rounded-full font-black text-white border-3 border-black transition-all duration-150 group flex items-center justify-center
     ${color} hover:shadow-[0_6px_0_0_#000000] font-['Urbanist']
     ${disabled ? 'opacity-50 pointer-events-none' : 'hover:-translate-y-1 active:translate-y-0 active:shadow-none'}
     ${className}`;
@@ -39,7 +39,7 @@ export function CartoonButton({
       <span className="relative z-10 whitespace-nowrap flex items-center justify-center gap-2 tracking-tight">
         {label}
       </span>
-      
+
       {hasHighlight && !disabled && (
         <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
           <div className={`absolute top-1/2 left-[-100%] w-16 h-24 -translate-y-1/2 rotate-12 transition-all duration-500 ease-in-out group-hover:left-[200%]

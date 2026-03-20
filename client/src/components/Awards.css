@@ -26,13 +26,21 @@
 }
 
 @media (max-width: 768px) {
+    .awards-section {
+        padding: 60px 0;
+    }
+
     .awards-gallery-wrap {
         height: 450px;
     }
 }
 
 @media (max-width: 480px) {
-    .awards-gallery-wrap {
-        height: 380px;
+    .awards-section {
+        padding: 40px 0;
     }
-}
+
+    .awards-gallery-wrap {
+        height: 300px;
+    }
+}

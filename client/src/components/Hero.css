@@ -303,6 +303,7 @@
 @media (max-width: 768px) {
     .hero {
         padding-top: 120px;
+        min-height: auto;
     }
 
     .hero-actions {
@@ -314,4 +315,35 @@
     .btn-secondary {
         width: 100%;
     }
+
+    .hero-text {
+        margin-bottom: 40px;
+    }
 }
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero-text {
+        margin-bottom: 32px;
+    }
+
+    .hero-text p {
+        margin: 16px auto 28px;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        width: 100%;
+        font-size: 16px;
+        padding: 14px 24px;
+        height: 56px;
+    }
+
+    .hero-actions {
+        gap: 12px;
+        padding: 0 8px;
+    }
+}

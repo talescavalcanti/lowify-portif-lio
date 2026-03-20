@@ -11,6 +11,18 @@ import {
     Webhook, 
     MousePointer2 
 } from "lucide-react"
+import React from "react"
+
+const useIsMobile = () => {
+    const [isMobile, setIsMobile] = React.useState(false);
+    React.useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth <= 768);
+        check();
+        window.addEventListener('resize', check);
+        return () => window.removeEventListener('resize', check);
+    }, []);
+    return isMobile;
+};
 
 export function ScrollTriggered() {
     return (
@@ -31,37 +43,53 @@ interface CardProps {
 }
 
 function Card({ title, description, icon, color, i }: CardProps) {
-    const splashBg = `radial-gradient(circle at 50% 120%, ${color}22 0%, #000000 70%)`
+    const splashBg = `radial-gradient(circle at 50% 120%, ${color}10 0%, transparent 60%)`
+    const isMobile = useIsMobile();
+
+    // On mobile: no rotation, simpler animation
+    const mobileCardVariants: Variants = {
+        offscreen: {
+            y: 60,
+            opacity: 0,
+        },
+        onscreen: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                bounce: 0.3,
+                duration: 0.6,
+            },
+        },
+    };
 
     return (
         <motion.div
             className={`card-container-${i} flex flex-col items-center justify-center relative overflow-hidden`}
-            style={cardContainer}
+            style={isMobile ? cardContainerMobile : cardContainer}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ amount: 0.8 }}
+            viewport={{ amount: isMobile ? 0.3 : 0.8 }}
         >
-            <div style={{ ...splash, background: splashBg }} />
+            {!isMobile && <div style={{ ...splash, background: splashBg }} />}
             <motion.div 
-                style={card} 
-                variants={cardVariants} 
-                className="card flex flex-col p-12 text-center justify-center items-center group relative overflow-hidden"
-                whileHover={{ y: 35, rotate: -6, scale: 1.02, transition: { type: "spring", stiffness: 300, damping: 20 } }}
+                style={isMobile ? cardMobile : card} 
+                variants={isMobile ? mobileCardVariants : cardVariants} 
+                className="card flex flex-col px-6 py-8 md:px-8 md:py-10 text-center justify-center items-center group relative overflow-hidden"
+                whileHover={isMobile ? {} : { y: 35, rotate: -6, scale: 1.02, transition: { type: "spring", stiffness: 300, damping: 20 } }}
             >
-                {/* Shine effect overlay */}
-                <div className="absolute top-[-100%] left-[-100%] w-[300%] h-[300%] bg-gradient-to-br from-white/20 via-transparent to-transparent rotate-45 pointer-events-none group-hover:top-[100%] group-hover:left-[100%] transition-all duration-1000 ease-in-out" />
-                
                 <div 
-                    className="mb-8 p-5 rounded-3xl transition-all duration-300 group-hover:rotate-6 group-hover:scale-110 shadow-lg"
-                    style={{ backgroundColor: `${color}10`, color: color }}
+                    className="mb-4 md:mb-6 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 shadow-sm border"
+                    style={{ backgroundColor: `${color}08`, color: color, borderColor: `${color}20` }}
                 >
                     {icon}
                 </div>
-                <h3 className="text-2xl font-extrabold mb-4 text-slate-900 tracking-tight leading-tight">{title}</h3>
-                <p className="text-base text-slate-500 leading-relaxed font-semibold max-w-[240px]">{description}</p>
+
+                <h3 className="text-lg md:text-[22px] font-bold mb-2 md:mb-3 text-slate-800 tracking-tight leading-tight z-10">{title}</h3>
                 
-                {/* Inner Glow Border */}
-                <div className="absolute inset-0 rounded-[32px] border border-white/60 pointer-events-none" />
+                <p className="text-sm md:text-[15px] text-slate-500 leading-relaxed font-medium max-w-[240px] z-10">{description}</p>
+                
+                <div className="absolute bottom-0 left-0 right-0 h-1 translate-y-full group-hover:translate-y-0 transition-transform duration-300" style={{ backgroundColor: color }}></div>
             </motion.div>
         </motion.div>
     )
@@ -76,20 +104,18 @@ const cardVariants: Variants = {
         rotate: -10,
         transition: {
             type: "spring",
-            bounce: 0.4,
-            duration: 0.8,
+            bounce: 0.35,
+            duration: 0.6,
         },
     },
 }
-
-const hue = (h: number) => `hsl(${h}, 100%, 50%)`
-
 
 const container: React.CSSProperties = {
     margin: "0 auto",
     maxWidth: 500,
     paddingBottom: 100,
     width: "100%",
+    paddingInline: "8px",
 }
 
 const cardContainer: React.CSSProperties = {
@@ -100,6 +126,16 @@ const cardContainer: React.CSSProperties = {
     position: "relative",
     paddingTop: 20,
     marginBottom: -80,
+}
+
+const cardContainerMobile: React.CSSProperties = {
+    overflow: "hidden",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    paddingTop: 8,
+    marginBottom: 16,
 }
 
 const splash: React.CSSProperties = {
@@ -115,17 +151,29 @@ const card: React.CSSProperties = {
     width: 320,
     height: 400,
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: "32px",
-    background: "linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%)",
-    backdropFilter: "blur(24px) saturate(180%)",
-    WebkitBackdropFilter: "blur(24px) saturate(180%)",
-    boxShadow:
-        "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 20px 40px -4px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.3)",
+    borderRadius: "24px",
+    background: "#ffffff",
+    boxShadow: "0 20px 40px -8px rgba(0, 0, 0, 0.15), 0 4px 10px -2px rgba(0, 0, 0, 0.05)",
     transformOrigin: "10% 60%",
-    border: "1px solid rgba(0, 0, 0, 0.1)",
+    border: "1px solid #e2e8f0",
     cursor: "pointer",
+}
+
+const cardMobile: React.CSSProperties = {
+    width: "100%",
+    maxWidth: "320px",
+    minHeight: "280px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "20px",
+    background: "#ffffff",
+    boxShadow: "0 8px 24px -4px rgba(0, 0, 0, 0.12)",
+    border: "1px solid #e2e8f0",
 }
 
 

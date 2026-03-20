@@ -27,25 +27,21 @@ export const ContainerScroll = ({
         };
     }, []);
 
-    const scaleDimensions = () => {
-        return isMobile ? [0.85, 1] : [0.9, 1];
-    };
-
-    // Starts tilted (20°) and scales down, ends flat (0°) and full-size as user scrolls
-    const rotate = useTransform(scrollYProgress, [0, 0.5], [20, 0]);
-    const scale = useTransform(scrollYProgress, [0, 0.5], scaleDimensions());
-    const translate = useTransform(scrollYProgress, [0, 0.5], [0, -40]);
+    // On mobile: no rotation, no scale change — just show the image flat
+    const rotate = useTransform(scrollYProgress, [0, 0.5], isMobile ? [0, 0] : [20, 0]);
+    const scale = useTransform(scrollYProgress, [0, 0.5], isMobile ? [1, 1] : [0.9, 1]);
+    const translate = useTransform(scrollYProgress, [0, 0.5], isMobile ? [0, 0] : [0, -40]);
 
     return (
         <div
-            style={{ minHeight: "60vh" }}
+            style={{ minHeight: isMobile ? "auto" : "60vh" }}
             className="flex items-start justify-center relative p-2 md:p-10"
             ref={containerRef}
         >
             <div
                 className="w-full relative"
                 style={{
-                    perspective: "1000px",
+                    perspective: isMobile ? "none" : "1000px",
                 }}
             >
                 <Header translate={translate} titleComponent={titleComponent} />
