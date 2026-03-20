@@ -1,12 +1,23 @@
-"use client";
-import React, { useRef } from "react";
+"use strict";
+import { useRef, useEffect, useState } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+
+interface HeaderProps {
+    translate: MotionValue<number>;
+    titleComponent: React.ReactNode;
+}
+
+interface CardProps {
+    rotate: MotionValue<number>;
+    scale: MotionValue<number>;
+    children: React.ReactNode;
+}
 
 export const ContainerScroll = ({
     titleComponent,
     children,
 }: {
-    titleComponent: string | React.ReactNode;
+    titleComponent?: string | React.ReactNode;
     children: React.ReactNode;
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -14,9 +25,9 @@ export const ContainerScroll = ({
         target: containerRef,
         offset: ["start end", "end start"],
     });
-    const [isMobile, setIsMobile] = React.useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const checkMobile = () => {
             setIsMobile(window.innerWidth <= 768);
         };
@@ -27,7 +38,6 @@ export const ContainerScroll = ({
         };
     }, []);
 
-    // On mobile: no rotation, no scale change — just show the image flat
     const rotate = useTransform(scrollYProgress, [0, 0.5], isMobile ? [0, 0] : [20, 0]);
     const scale = useTransform(scrollYProgress, [0, 0.5], isMobile ? [1, 1] : [0.9, 1]);
     const translate = useTransform(scrollYProgress, [0, 0.5], isMobile ? [0, 0] : [0, -40]);
@@ -44,8 +54,8 @@ export const ContainerScroll = ({
                     perspective: isMobile ? "none" : "1000px",
                 }}
             >
-                <Header translate={translate} titleComponent={titleComponent} />
-                <Card rotate={rotate} translate={translate} scale={scale}>
+                {titleComponent && <Header translate={translate} titleComponent={titleComponent} />}
+                <Card rotate={rotate} scale={scale}>
                     {children}
                 </Card>
             </div>
@@ -53,7 +63,7 @@ export const ContainerScroll = ({
     );
 };
 
-export const Header = ({ translate, titleComponent }: any) => {
+export const Header = ({ translate, titleComponent }: HeaderProps) => {
     return (
         <motion.div
             style={{
@@ -70,12 +80,7 @@ export const Card = ({
     rotate,
     scale,
     children,
-}: {
-    rotate: MotionValue<number>;
-    scale: MotionValue<number>;
-    translate: MotionValue<number>;
-    children: React.ReactNode;
-}) => {
+}: CardProps) => {
     return (
         <motion.div
             style={{

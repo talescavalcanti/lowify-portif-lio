@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import './Showcase.css';
 
@@ -33,7 +32,7 @@ const Showcase: React.FC = () => {
                         transition={{ type: "spring", stiffness: 30, damping: 25, mass: 1.2, delay: 0.2 }}
                         viewport={{ once: true, amount: 0.2 }}
                     >
-                        <img src="/images/members-area-new-D0bKcp8i.webp" alt="Área de Membros" />
+                        <img src="/images/members-area-new-D0bKcp8i.webp" alt="Área de Membros" loading="lazy" width={800} height={500} />
                     </motion.div>
                 </div>
             </section>
@@ -54,8 +53,8 @@ const Showcase: React.FC = () => {
                             está disponível em todas as plataformas para você nunca perder uma venda.
                         </p>
                         <div className="store-icons">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="store-badge" />
-                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276550400&h=7e5b682b2a875240983699c0d95d58a9" alt="App Store" className="store-badge" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="store-badge" loading="lazy" width={250} height={83} />
+                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276550400&h=7e5b682b2a875240983699c0d95d58a9" alt="App Store" className="store-badge" loading="lazy" width={250} height={83} />
                         </div>
                     </motion.div>
                     <motion.div
@@ -65,7 +64,7 @@ const Showcase: React.FC = () => {
                         transition={{ type: "spring", stiffness: 30, damping: 25, delay: 0.2 }}
                         viewport={{ once: true, amount: 0.2 }}
                     >
-                        <img src="/images/app-mockup--8Zz-3V7.webp" alt="Mobile App" className="mobile-mockup" />
+                        <img src="/images/app-mockup--8Zz-3V7.webp" alt="Mobile App" className="mobile-mockup" loading="lazy" width={400} height={800} />
                     </motion.div>
                 </div>
             </section>
@@ -104,7 +103,7 @@ const Showcase: React.FC = () => {
                         transition={{ type: "spring", stiffness: 20, damping: 20, delay: 0.2 }}
                         viewport={{ once: true, amount: 0.2 }}
                     >
-                        <img src="/images/checkout-new-CKfoaoJ6.webp" alt="Checkout Instantâneo" />
+                        <img src="/images/checkout-new-CKfoaoJ6.webp" alt="Checkout Instantâneo" loading="lazy" width={800} height={500} />
                     </motion.div>
                 </div>
             </section>

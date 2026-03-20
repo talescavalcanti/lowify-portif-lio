@@ -1,4 +1,3 @@
-import React from 'react';
 import { ScrollTriggered } from './ui/stack-card';
 
 const Features: React.FC = () => {

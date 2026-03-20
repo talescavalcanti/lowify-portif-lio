@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { ReactLenis } from '@studio-freight/react-lenis';
 
 interface SmoothScrollProps {
@@ -10,7 +10,6 @@ export const SmoothScroll = ({ children }: SmoothScrollProps) => {
     <ReactLenis
       root
       options={{
-        lerp: 0.1,
         duration: 1.2,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: 'vertical',
@@ -24,3 +23,4 @@ export const SmoothScroll = ({ children }: SmoothScrollProps) => {
     </ReactLenis>
   );
 };
+

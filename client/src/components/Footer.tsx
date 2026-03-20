@@ -1,4 +1,3 @@
-import React from 'react';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -7,7 +6,7 @@ const Footer: React.FC = () => {
             <div className="container">
                 <div className="footer-grid">
                     <div className="footer-brand">
-                        <img src="/images/lowify-white-logo-DR9-6ezs.png" alt="Lowify Logo" className="footer-logo" />
+                        <img src="/images/lowify-white-logo-DR9-6ezs.png" alt="Lowify Logo" className="footer-logo" loading="lazy" width={120} height={30} />
                         <p className="p-normal">A plataforma que transforma seu conhecimento em faturamento escalável.</p>
                     </div>
                     <div className="footer-links">

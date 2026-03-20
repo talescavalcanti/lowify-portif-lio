@@ -11,24 +11,15 @@ import {
     Webhook, 
     MousePointer2 
 } from "lucide-react"
-import React from "react"
-
-const useIsMobile = () => {
-    const [isMobile, setIsMobile] = React.useState(false);
-    React.useEffect(() => {
-        const check = () => setIsMobile(window.innerWidth <= 768);
-        check();
-        window.addEventListener('resize', check);
-        return () => window.removeEventListener('resize', check);
-    }, []);
-    return isMobile;
-};
+import { useIsMobile } from "../../hooks/useIsMobile"
 
 export function ScrollTriggered() {
+    const isMobile = useIsMobile();
+
     return (
         <div className="w-full" style={container}>
             {featuresData.map((feature, i) => (
-                <Card i={i} {...feature} key={feature.title} />
+                <Card i={i} {...feature} key={feature.title} isMobile={isMobile} />
             ))}
         </div>
     )
@@ -40,13 +31,12 @@ interface CardProps {
     icon: React.ReactNode
     color: string
     i: number
+    isMobile: boolean
 }
 
-function Card({ title, description, icon, color, i }: CardProps) {
+function Card({ title, description, icon, color, i, isMobile }: CardProps) {
     const splashBg = `radial-gradient(circle at 50% 120%, ${color}10 0%, transparent 60%)`
-    const isMobile = useIsMobile();
 
-    // On mobile: no rotation, simpler animation
     const mobileCardVariants: Variants = {
         offscreen: {
             y: 60,

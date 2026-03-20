@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import { ContainerScroll } from "./ui/container-scroll-animation";
 
 export default function HeroScrollDemo() {
@@ -18,7 +16,7 @@ export default function HeroScrollDemo() {
                 }
             >
                 <img
-                    src={`/images/imagem hero.webp`}
+                    src="/images/imagem-hero.webp"
                     alt="hero"
                     className="mx-auto rounded-2xl object-cover h-full object-left-top"
                     draggable={false}

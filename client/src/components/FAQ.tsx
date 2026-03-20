@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './FAQ.css';
 
@@ -40,7 +40,7 @@ const FAQ: React.FC = () => {
                 <div className="faq-list">
                     {faqs.map((faq, index) => (
                         <motion.div
-                            key={index}
+                            key={faq.question}
                             className="faq-item"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}

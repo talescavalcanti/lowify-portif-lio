@@ -399,6 +399,7 @@ class App {
     screen!: { width: number; height: number };
     viewport!: { width: number; height: number };
     raf: number = 0;
+    isVisible: boolean = true;
 
     boundOnResize!: () => void;
     boundOnWheel!: (e: Event) => void;
@@ -554,7 +555,9 @@ class App {
         }
         this.renderer.render({ scene: this.scene, camera: this.camera });
         this.scroll.last = this.scroll.current;
-        this.raf = window.requestAnimationFrame(this.update.bind(this));
+        if (this.isVisible) {
+            this.raf = window.requestAnimationFrame(this.update.bind(this));
+        }
     }
 
     addEventListeners() {
@@ -564,7 +567,6 @@ class App {
         this.boundOnTouchMove = this.onTouchMove.bind(this);
         this.boundOnTouchUp = this.onTouchUp.bind(this);
         window.addEventListener('resize', this.boundOnResize);
-        window.addEventListener('mousewheel', this.boundOnWheel);
         window.addEventListener('wheel', this.boundOnWheel);
         window.addEventListener('mousedown', this.boundOnTouchDown);
         window.addEventListener('mousemove', this.boundOnTouchMove);
@@ -574,10 +576,21 @@ class App {
         window.addEventListener('touchend', this.boundOnTouchUp);
     }
 
+    pause() {
+        this.isVisible = false;
+        window.cancelAnimationFrame(this.raf);
+    }
+
+    resume() {
+        if (!this.isVisible) {
+            this.isVisible = true;
+            this.update();
+        }
+    }
+
     destroy() {
         window.cancelAnimationFrame(this.raf);
         window.removeEventListener('resize', this.boundOnResize);
-        window.removeEventListener('mousewheel', this.boundOnWheel);
         window.removeEventListener('wheel', this.boundOnWheel);
         window.removeEventListener('mousedown', this.boundOnTouchDown);
         window.removeEventListener('mousemove', this.boundOnTouchMove);
@@ -622,7 +635,21 @@ export default function CircularGallery({
             scrollSpeed,
             scrollEase
         });
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    app.resume();
+                } else {
+                    app.pause();
+                }
+            },
+            { threshold: 0.1 }
+        );
+        observer.observe(containerRef.current);
+
         return () => {
+            observer.disconnect();
             app.destroy();
         };
     }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);

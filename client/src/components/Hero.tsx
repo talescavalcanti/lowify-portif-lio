@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { CartoonButton } from './ui/cartoon-button';
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
                     </div>
                 </div>
 
-                <ContainerScroll titleComponent={<></>}>
+                <ContainerScroll>
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
                         }}
                     >
                         <img
-                            src="/images/imagem hero.webp"
+                            src="/images/imagem-hero.webp"
                             alt="Lowify Dashboard"
                             className="hero-image rounded-2xl"
                             draggable={false}

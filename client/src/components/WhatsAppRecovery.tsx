@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import './WhatsAppRecovery.css';
 
@@ -24,7 +24,7 @@ const WhatsAppRecovery: React.FC = () => {
                             <a href="#whats" className="btn-primary">Ativar Recuperação</a>
                         </div>
                         <div className="whatsapp-image">
-                            <img src="/images/desafio-1k-1.webp" alt="Recuperação WhatsApp" />
+                            <img src="/images/desafio-1k-1.webp" alt="Recuperação WhatsApp" loading="lazy" width={600} height={400} />
                         </div>
                     </div>
                 </motion.div>

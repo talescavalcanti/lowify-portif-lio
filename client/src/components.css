@@ -1,5 +1,4 @@
 /* Global UI Components based on design tokens */
-@import './theme.css';
 
 /* Base Styles */
 * {
@@ -8,12 +7,6 @@
     padding: 0;
 }
 
-body {
-    font-family: var(--font-primary);
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-    overflow-x: hidden;
-}
 
 /* Button System */
 /* Botão Mágico Premium (Hero CTA) */

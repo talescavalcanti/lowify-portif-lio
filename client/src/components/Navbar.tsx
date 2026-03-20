@@ -1,24 +1,17 @@
-import React, { useLayoutEffect, useRef, useState, useEffect } from 'react';
+import { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CartoonButton } from './ui/cartoon-button';
+import { useIsMobile } from '../hooks/useIsMobile';
 import './Navbar.css';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const MOBILE_BREAKPOINT = 768;
 
 const Navbar: React.FC = () => {
     const wrapRef = useRef<HTMLDivElement>(null);
     const glassRef = useRef<HTMLDivElement>(null);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_BREAKPOINT);
-
-    useEffect(() => {
-        const checkMobile = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
+    const isMobile = useIsMobile();
 
     // Lock body scroll when mobile menu is open
     useEffect(() => {
@@ -38,7 +31,7 @@ const Navbar: React.FC = () => {
         if (!wrap || !glass) return;
 
         // On mobile: skip all GSAP animations. Just show navbar simply.
-        if (window.innerWidth <= MOBILE_BREAKPOINT) {
+        if (window.innerWidth <= 768) {
             gsap.set(glass, { width: '100%', left: 0, transform: 'none' });
             gsap.set(wrap.parentElement, { autoAlpha: 1 });
             gsap.set(wrap, { autoAlpha: 1 });
@@ -65,6 +58,8 @@ const Navbar: React.FC = () => {
             });
         };
 
+        const navbarTriggers: ScrollTrigger[] = [];
+
         const setupScrollAnimations = () => {
             const logoW = logoEl.getBoundingClientRect().width;
             const linksW = linksEl.getBoundingClientRect().width;
@@ -72,7 +67,8 @@ const Navbar: React.FC = () => {
 
             const compactWidth = logoW + linksW + ctaW + 24 + 24 + 40;
 
-            ScrollTrigger.getAll().forEach(t => t.kill());
+            navbarTriggers.forEach(t => t.kill());
+            navbarTriggers.length = 0;
             gsap.set([wrap, glass], { clearProps: "all" });
 
             positionGlass();
@@ -84,18 +80,20 @@ const Navbar: React.FC = () => {
                 scrub: 2.2,
             };
 
-            gsap.to(wrap, {
+            const wrapAnim = gsap.to(wrap, {
                 maxWidth: compactWidth,
                 ease: 'none',
                 scrollTrigger: scrollConfig,
             });
+            if (wrapAnim.scrollTrigger) navbarTriggers.push(wrapAnim.scrollTrigger);
 
-            gsap.to(glass, {
+            const glassAnim = gsap.to(glass, {
                 width: '100%',
                 left: 0,
                 ease: 'none',
                 scrollTrigger: scrollConfig,
             });
+            if (glassAnim.scrollTrigger) navbarTriggers.push(glassAnim.scrollTrigger);
         };
 
         const setupEntranceAnimation = () => {
@@ -151,7 +149,7 @@ const Navbar: React.FC = () => {
         };
 
         const ro = new ResizeObserver(() => {
-            if (window.innerWidth > MOBILE_BREAKPOINT) {
+            if (window.innerWidth > 768) {
                 setupScrollAnimations();
             }
         });
@@ -161,7 +159,7 @@ const Navbar: React.FC = () => {
 
         return () => {
             ro.disconnect();
-            ScrollTrigger.getAll().forEach(t => t.kill());
+            navbarTriggers.forEach(t => t.kill());
         };
     }, []);
 
