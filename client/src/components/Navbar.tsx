@@ -96,22 +96,32 @@ const Navbar: React.FC = () => {
             if (glassAnim.scrollTrigger) navbarTriggers.push(glassAnim.scrollTrigger);
         };
 
+        const ro = new ResizeObserver(() => {
+            if (window.innerWidth > 768) {
+                setupScrollAnimations();
+            }
+        });
+
         const setupEntranceAnimation = () => {
+            // Set initial hidden state before making the outer wrapper visible
             gsap.set(wrap, { y: -100, autoAlpha: 0, filter: 'blur(10px)' });
             gsap.set(glass, { scaleX: 0, autoAlpha: 0 });
             gsap.set([logoEl, ctaEl], { autoAlpha: 0 });
             gsap.set(linksEl.querySelectorAll('a'), { y: 15, autoAlpha: 0 });
 
+            // Reveal the outer container, keep inner hidden via GSAP
+            gsap.set(wrap.parentElement, { autoAlpha: 1 });
+
             const tl = gsap.timeline({
                 delay: 0.3,
                 defaults: { ease: 'expo.out', duration: 1.2 },
                 onComplete: () => {
+                    // Only init scroll animations AFTER entrance is done
+                    setupScrollAnimations();
                     ro.observe(wrap);
                     ScrollTrigger.refresh();
                 }
             });
-
-            gsap.set(wrap.parentElement, { autoAlpha: 1 });
 
             tl.to(wrap, {
                 y: 0,
@@ -148,13 +158,6 @@ const Navbar: React.FC = () => {
             return tl;
         };
 
-        const ro = new ResizeObserver(() => {
-            if (window.innerWidth > 768) {
-                setupScrollAnimations();
-            }
-        });
-
-        setupScrollAnimations();
         setupEntranceAnimation();
 
         return () => {
